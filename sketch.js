@@ -15,7 +15,7 @@ const key = 'pk.eyJ1IjoiaHNwZW5jZXIiLCJhIjoiY2tjd2tkMmk1MDI1YjJzcWNxdW9yazlyNiJ9
 // Options for map
 const options = {
   lat: -17,
-  lng: -63,
+  lng: -64,
   zoom: 2,
   style: 'mapbox://styles/mapbox/light-v9',
   /*
