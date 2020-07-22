@@ -14,8 +14,8 @@ const key = 'pk.eyJ1IjoiaHNwZW5jZXIiLCJhIjoiY2tjd2tkMmk1MDI1YjJzcWNxdW9yazlyNiJ9
 
 // Options for map
 const options = {
-  lat: -17,
-  lng: -64,
+  lat: -28.163576,
+  lng: -63.878019,
   zoom: 2,
   style: 'mapbox://styles/mapbox/light-v9',
   /*
@@ -27,9 +27,6 @@ const options = {
 // Create an instance of MapboxGL
 const mappa = new Mappa('MapboxGL', key);
 let myMap;
-
-let meteorites;
-
 let data, sketch, w, h, travesias;
 let yearSlider, allToggle;
 
@@ -182,4 +179,9 @@ class Travesia {
       ellipse(this.x, this.y, this.radius * 10);
     }
   }
+}
+
+function mousePressed(){
+  //let pos = myMap.pixelToLatlng(mouseX, mouseY);
+  console.log(myMap);
 }
