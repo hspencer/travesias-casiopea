@@ -1,10 +1,8 @@
 /*
 
-
 mapbox://styles/hspencer/ckcskikwl1x481hqp79vs7wnv
 
 pk.eyJ1IjoiaHNwZW5jZXIiLCJhIjoiY2tjd2tkMmk1MDI1YjJzcWNxdW9yazlyNiJ9.eh5wNGCoVQjIpgJyveOObw
-
 
 */
 
@@ -72,7 +70,7 @@ function setup() {
 
   createObjects();
 
-  yearSlider = createSlider(1984, 2018, 1984, 1);
+  yearSlider = createSlider(1984, 2024, 1984, 1);
   yearSlider.id('yearSlider');
 
   allToggle = createCheckbox('Ver todas', false);

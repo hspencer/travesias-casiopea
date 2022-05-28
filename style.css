@@ -35,8 +35,8 @@ canvas {
 
 #allToggle {
   position: absolute;
-  top: 23px;
-  left: 219px;
+  bottom: 17px;
+  left: 17px;
 }
 
 #allToggle label {
