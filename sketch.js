@@ -17,7 +17,8 @@ const options = {
   zoom: 2,
   style: 'mapbox://styles/mapbox/light-v9',
   /*
-  style: 'mapbox://styles/hspencer/ckcskikwl1x481hqp79vs7wnv?access_token=pk.eyJ1IjoiaHNwZW5jZXIiLCJhIjoiY2tjd2tkMmk1MDI1YjJzcWNxdW9yazlyNiJ9.eh5wNGCoVQjIpgJyveOObw',
+  style: 'mapbox://styles/mapbox/light-v9',
+  mapbox://styles/hspencer/ckcskikwl1x481hqp79vs7wnv
   */
   bearing: 180
 };
@@ -32,14 +33,15 @@ function preload() {
   w = select('#p5').width;
   h = select('#p5').height;
   travesias = [];
-  let url = "https://wiki.ead.pucv.cl/api.php?action=ask&format=json&maxlag=20000&smaxage=0&servedby=1&uselang=user&query=%5B%5BCategor%C3%ADa%3ATraves%C3%ADa%5D%5D%7C%3FA%C3%B1o%7C%3FPosici%C3%B3n%7C%3FDestino%7C%3FProfesores%7C%3FAlumnos%7Climit%3D9999";
+  let url = "https://wiki.ead.pucv.cl/api.php?action=ask&format=json&query=%5B%5BCategor%C3%ADa%3ATraves%C3%ADa%5D%5D%20%7C%3F%20A%C3%B1o%20%7C%3F%20Posici%C3%B3n%20%7C%3F%20Destino%7Climit%3D9999&utf8=1&formatversion=latest";
   data = loadJSON(url, gotData, 'jsonp');
 }
 
 
 
 function gotData(response) {
-  print("got data from Casiopea");
+  print("got data from Casiope:");
+  console.log(data);
 }
 
 function createObjects() {
@@ -100,7 +102,7 @@ function draw() {
       }
       for (let other of travesias) {
         if (travesia != other && other.year === currentYear) {
-          stroke('#ae290022');
+          stroke('#ae290033');
           other.update();
           line(travesia.x, travesia.y, other.x, other.y);
         }
@@ -150,7 +152,7 @@ class Travesia {
 
   rollover(px, py) {
     let d = dist(px, py, this.x, this.y);
-    this.over = d < this.radius;
+    this.over = d < this.radius * 1.5;
   }
 
   update() {
