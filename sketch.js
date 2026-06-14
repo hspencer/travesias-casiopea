@@ -41,7 +41,7 @@ function setup() {
   const h = select('#p5').height;
   canvas = createCanvas(w, h).parent('p5');
   cursor(CROSS);
-  textFont('Alegreya Sans');
+  textFont('IBM Plex Sans Condensed');
 
   myMap = mappa.tileMap(MAP_OPTIONS);
   myMap.overlay(canvas);
@@ -104,10 +104,8 @@ function draw() {
     if (travesia.over) {
       noStroke();
       fill(COLOR_MAIN);
-      textSize(14);
-      textAlign(CENTER, BOTTOM);
-      text(travesia.name, travesia.x, travesia.y - travesia.radius * 6);
-      textAlign(LEFT, BASELINE); // restaurar alineación por defecto
+      textSize(22);
+      text(travesia.name, 10, 65);
     }
   }
 
