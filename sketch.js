@@ -104,13 +104,10 @@ function draw() {
     if (travesia.over) {
       noStroke();
       fill(COLOR_MAIN);
-      textSize(22);
-      text(travesia.name, 10, 65);
-
-      if (mouseIsPressed) {
-        window.open(travesia.url, '_parent');
-        noLoop();
-      }
+      textSize(14);
+      textAlign(CENTER, BOTTOM);
+      text(travesia.name, travesia.x, travesia.y - travesia.radius * 6);
+      textAlign(LEFT, BASELINE); // restaurar alineación por defecto
     }
   }
 
@@ -119,6 +116,15 @@ function draw() {
     fill(0, 200);
     textSize(16);
     text('Año ' + currentYear, 15, 20);
+  }
+}
+
+function mousePressed() {
+  for (const travesia of travesias) {
+    if (travesia.over) {
+      window.open(travesia.url, '_blank');
+      break;
+    }
   }
 }
 
