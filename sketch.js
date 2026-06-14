@@ -31,7 +31,7 @@ let currentYear = YEAR_MIN;
 
 function preload() {
   // jsonp necesario: la API de la wiki no envía cabeceras CORS
-  data = loadJSON(WIKI_URL, null, null, 'jsonp');
+  data = loadJSON(WIKI_URL, () => {}, 'jsonp');
 }
 
 // --- Setup ---
