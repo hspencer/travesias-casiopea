@@ -15,8 +15,10 @@ const WIKI_URL = 'https://wiki.ead.pucv.cl/api.php?action=ask&format=json' +
   '&query=%5B%5BCategor%C3%ADa%3ATraves%C3%ADa%5D%5D%20%7C%3F%20A%C3%B1o%20%7C%3F%20Posici%C3%B3n%20%7C%3F%20Destino%7Climit%3D9999' +
   '&utf8=1&formatversion=latest';
 
-const YEAR_MIN   = 1984;
-const YEAR_MAX   = 2026;
+const YEAR_MIN = 1984;
+// Las travesías se realizan en noviembre; si aún no llegamos a noviembre, el año en curso no tiene datos
+const _now     = new Date();
+const YEAR_MAX = _now.getMonth() >= 10 ? _now.getFullYear() : _now.getFullYear() - 1;
 const COLOR_MAIN = '#ae2900';
 
 const mappa = new Mappa('MapboxGL', MAPBOX_KEY);
